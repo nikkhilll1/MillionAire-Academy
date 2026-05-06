@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MillionAIre Academy – Become a Millionaire in Your 20s</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-l:#E8C96B;--gold-d:#9A7B2F;--navy:#08101E;--navy-l:#0F1A2E;--navy-m:#152240;--text:#F2EDD8;--text2:#A8946B;--text3:#5C5040}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);min-height:100vh;overflow-x:hidden}
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;border-bottom:1px solid rgba(201,168,76,.18);position:sticky;top:0;background:rgba(8,16,30,.96);backdrop-filter:blur(10px);z-index:200}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-text{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--gold)}
+.logo-text b{color:var(--text);font-weight:400}
+.nav-cta{background:var(--gold);color:var(--navy);border:none;padding:.55rem 1.4rem;border-radius:4px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.88rem;cursor:pointer;transition:all .2s;letter-spacing:.3px}
+.nav-cta:hover{background:var(--gold-l);transform:translateY(-1px)}
+/* HERO */
+.hero{padding:6rem 2rem 4rem;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;background:radial-gradient(ellipse 900px 500px at 50% -100px,rgba(201,168,76,.07) 0%,transparent 70%)}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(201,168,76,.07) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.09);border:1px solid rgba(201,168,76,.28);border-radius:50px;padding:.38rem 1.1rem;font-size:.75rem;font-weight:600;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:2rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,6vw,4.8rem);font-weight:900;line-height:1.08;max-width:920px;margin-bottom:1.4rem}
+.g{color:var(--gold)}.it{font-style:italic;color:var(--text2)}
+.hero-sub{font-size:1.08rem;color:var(--text2);max-width:580px;line-height:1.75;margin-bottom:2.8rem;font-weight:300}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.btn-p{background:linear-gradient(135deg,var(--gold),#A87C2A);color:var(--navy);border:none;padding:.9rem 2.4rem;border-radius:4px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;transition:all .25s;letter-spacing:.3px}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(201,168,76,.28)}
+.btn-s{background:transparent;color:var(--text);border:1px solid rgba(201,168,76,.35);padding:.9rem 2rem;border-radius:4px;font-family:'DM Sans',sans-serif;font-weight:500;font-size:1rem;cursor:pointer;transition:all .2s}
+.btn-s:hover{border-color:var(--gold);color:var(--gold)}
+/* STATS */
+.stats{display:flex;justify-content:center;gap:0;border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1);background:var(--navy-l)}
+.stat{flex:1;text-align:center;padding:2.5rem 1rem;border-right:1px solid rgba(201,168,76,.08);max-width:220px}
+.stat:last-child{border-right:none}
+.stat-n{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:700;color:var(--gold);line-height:1}
+.stat-l{font-size:.82rem;color:var(--text2);margin-top:.5rem;font-weight:300}
+/* CURRICULUM */
+.curriculum{padding:5rem 3rem;max-width:1100px;margin:0 auto;width:100%}
+.sec-label{font-size:.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
+.sec-title{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;margin-bottom:.8rem;max-width:500px}
+.sec-sub{font-size:.95rem;color:var(--text2);margin-bottom:2.8rem;font-weight:300;max-width:560px;line-height:1.7}
+.ch-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.ch-card{background:var(--navy-l);border:1px solid rgba(201,168,76,.13);border-radius:8px;padding:1.6rem;cursor:pointer;transition:all .25s;position:relative;overflow:hidden}
+.ch-card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--gold-d));transform:scaleY(0);transform-origin:top;transition:transform .25s}
+.ch-card:hover::after{transform:scaleY(1)}
+.ch-card:hover{border-color:rgba(201,168,76,.35);transform:translateY(-3px)}
+.ch-num{font-size:.7rem;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:.5rem}
+.ch-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:.5rem;line-height:1.3}
+.ch-desc{font-size:.83rem;color:var(--text2);line-height:1.6}
+.ch-meta{display:flex;gap:1rem;margin-top:1rem;font-size:.75rem;color:var(--text3)}
+.ch-play-btn{display:inline-flex;align-items:center;gap:.4rem;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);color:var(--gold);border-radius:50px;padding:.35rem .9rem;font-size:.75rem;font-weight:600;margin-top:.8rem;transition:all .2s}
+.ch-card:hover .ch-play-btn{background:rgba(201,168,76,.2)}
+/* FEATURES */
+.features{padding:4rem 3rem;background:var(--navy-l);border-top:1px solid rgba(201,168,76,.08);border-bottom:1px solid rgba(201,168,76,.08)}
+.features-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.feat{padding:1.5rem}
+.feat-icon{font-size:1.8rem;margin-bottom:1rem}
+.feat-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
+.feat-desc{font-size:.85rem;color:var(--text2);line-height:1.65;font-weight:300}
+/* PLAYER */
+.player{display:none;min-height:100vh;flex-direction:column}
+.player.on{display:flex}
+.player-nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 2rem;background:var(--navy-l);border-bottom:1px solid rgba(201,168,76,.18)}
+.back-btn{background:transparent;color:var(--text2);border:1px solid rgba(201,168,76,.2);padding:.45rem 1rem;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:.82rem;cursor:pointer;transition:all .2s}
+.back-btn:hover{color:var(--gold);border-color:var(--gold)}
+.player-body{display:flex;flex:1;min-height:0}
+.sidebar{width:290px;flex-shrink:0;background:var(--navy-l);border-right:1px solid rgba(201,168,76,.12);overflow-y:auto;max-height:calc(100vh - 56px)}
+.sidebar-hd{padding:1.2rem 1.5rem;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3);border-bottom:1px solid rgba(201,168,76,.08)}
+.sb-ch{padding:1rem 1.5rem;cursor:pointer;border-bottom:1px solid rgba(201,168,76,.05);transition:all .2s;position:relative}
+.sb-ch::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);opacity:0;transition:opacity .2s}
+.sb-ch.on::before{opacity:1}
+.sb-ch.on{background:rgba(201,168,76,.07)}
+.sb-ch:hover{background:rgba(201,168,76,.05)}
+.sb-num{font-size:.68rem;color:var(--gold);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:.25rem}
+.sb-title{font-size:.88rem;font-weight:500;line-height:1.35;color:var(--text)}
+.sb-dur{font-size:.72rem;color:var(--text3);margin-top:.25rem}
+.sb-done{font-size:.65rem;color:var(--gold-l);margin-top:.25rem}
+/* MAIN */
+.main{flex:1;overflow-y:auto;padding:2.5rem 3.5rem;max-height:calc(100vh - 56px)}
+.content-label{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.content-title{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;margin-bottom:2rem;line-height:1.2}
+/* AUDIO */
+.audio-box{background:var(--navy-m);border:1px solid rgba(201,168,76,.2);border-radius:10px;padding:1.4rem 1.6rem;margin-bottom:2rem}
+.audio-top{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;flex-wrap:wrap}
+.play-btn{width:52px;height:52px;border-radius:50%;background:var(--gold);border:none;color:var(--navy);font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.play-btn:hover{background:var(--gold-l);transform:scale(1.06)}
+.stop-btn{width:38px;height:38px;border-radius:50%;background:transparent;border:1.5px solid rgba(201,168,76,.4);color:var(--text2);font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.stop-btn:hover{border-color:var(--gold);color:var(--gold)}
+.audio-info{flex:1;min-width:120px}
+.audio-status{font-size:.78rem;color:var(--gold);font-weight:500;margin-bottom:.3rem;min-height:1rem}
+.progress-bar{height:4px;background:rgba(201,168,76,.15);border-radius:2px;overflow:hidden;margin-bottom:.5rem}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-l));width:0%;transition:width .6s linear;border-radius:2px}
+.audio-pct{font-size:.72rem;color:var(--text3)}
+.audio-settings{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding-top:.8rem;border-top:1px solid rgba(201,168,76,.1)}
+.setting{display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:var(--text2)}
+.setting select{background:var(--navy);color:var(--text);border:1px solid rgba(201,168,76,.25);border-radius:4px;padding:.3rem .6rem;font-size:.78rem;font-family:'DM Sans',sans-serif;cursor:pointer}
+.voice-note{font-size:.7rem;color:var(--text3);font-style:italic}
+/* CONTENT */
+.chapter-text{font-size:1.02rem;line-height:1.9;color:var(--text2);font-weight:300}
+.chapter-text h3{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--text);margin:2.2rem 0 .8rem}
+.chapter-text p{margin-bottom:1.3rem}
+.chapter-text .hl{color:var(--gold);font-weight:500}
+.chapter-text .big{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--text);font-style:italic}
+.keybox{background:var(--navy-m);border:1px solid rgba(201,168,76,.18);border-left:3px solid var(--gold);border-radius:6px;padding:1.4rem 1.6rem;margin:1.8rem 0}
+.keybox-title{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem}
+.kp{display:flex;gap:.7rem;align-items:flex-start;margin-bottom:.65rem;font-size:.88rem;color:var(--text2);line-height:1.55}
+.kp:last-child{margin-bottom:0}
+.dot{width:5px;height:5px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:.55rem}
+.next-btn{display:flex;align-items:center;justify-content:space-between;background:var(--navy-m);border:1px solid rgba(201,168,76,.18);border-radius:8px;padding:1.4rem 1.6rem;margin-top:3rem;cursor:pointer;transition:all .2s;width:100%;text-align:left}
+.next-btn:hover{border-color:var(--gold);transform:translateY(-2px)}
+.next-lbl{font-size:.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:.3rem}
+.next-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--text)}
+.next-arrow{color:var(--gold);font-size:1.5rem}
+.complete-box{text-align:center;padding:3rem 2rem;margin-top:2rem;border:1px solid rgba(201,168,76,.2);border-radius:10px;background:rgba(201,168,76,.04)}
+.complete-box h3{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold);margin-bottom:1rem}
+.complete-box p{color:var(--text2);margin-bottom:1.5rem;line-height:1.7}
+@media(max-width:900px){.ch-grid{grid-template-columns:1fr}.stats{flex-wrap:wrap}.stat{min-width:50%}.curriculum{padding:3rem 1.5rem}.features-inner{grid-template-columns:1fr}.player-body{flex-direction:column}.sidebar{width:100%;max-height:200px}.main{padding:1.5rem}}
+</style>
+</head>
+<body>
+
+<!-- ═══ LANDING PAGE ═══ -->
+<div id="landing">
+
+<nav class="nav">
+  <div class="logo">
+    <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+      <rect width="40" height="40" rx="8" fill="#0F1A2E"/>
+      <polygon points="6,30 12,10 20,24 28,10 34,30" fill="none" stroke="#C9A84C" stroke-width="2.2" stroke-linejoin="round"/>
+      <circle cx="20" cy="20" r="2.5" fill="#C9A84C"/>
+      <line x1="20" y1="5" x2="20" y2="8" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="32" y1="12" x2="29.5" y2="14" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="8" y1="12" x2="10.5" y2="14" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <div class="logo-text">Million<b>AI</b>re <b>Academy</b></div>
+  </div>
+  <button class="nav-cta" onclick="showPlayer(0)">▶ Start Free Course</button>
+</nav>
+
+<div class="hero">
+  <div class="badge">✦ AI-Powered Wealth Course · 2025 Edition</div>
+  <h1>Become a <span class="g">Millionaire</span><br>in Your <span class="it">20s</span> Using<br><span class="g">AI Digital Products</span></h1>
+  <p class="hero-sub">A 5-chapter audio course with AI voice narration — revealing exactly how to build, sell, and scale AI-powered digital products from zero to $1,000,000.</p>
+  <div class="hero-btns">
+    <button class="btn-p" onclick="showPlayer(0)">▶ &nbsp;Start Learning Free</button>
+    <button class="btn-s" onclick="document.getElementById('cur').scrollIntoView({behavior:'smooth'})">View Curriculum ↓</button>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-n">5</div><div class="stat-l">In-Depth Chapters</div></div>
+  <div class="stat"><div class="stat-n">35+</div><div class="stat-l">Minutes of Audio</div></div>
+  <div class="stat"><div class="stat-n">$1M</div><div class="stat-l">Revenue Roadmap</div></div>
+  <div class="stat"><div class="stat-n">AI</div><div class="stat-l">Voice Narrated</div></div>
+</div>
+
+<div class="features">
+  <div class="features-inner">
+    <div class="feat">
+      <div class="feat-icon">🎙️</div>
+      <div class="feat-title">AI Female Voice Narration</div>
+      <div class="feat-desc">Every chapter is narrated by a natural AI voice — clear, engaging, and built right into your browser. No downloads needed.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">⚡</div>
+      <div class="feat-title">Actionable Frameworks</div>
+      <div class="feat-desc">Not theory. Each chapter ends with a concrete action plan you can start implementing the same day, even with zero budget.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">🚀</div>
+      <div class="feat-title">Built for Your 20s</div>
+      <div class="feat-desc">Designed for people with energy, no legacy overhead, and everything to gain. Time is your unfair advantage — we show you how to use it.</div>
+    </div>
+  </div>
+</div>
+
+<div class="curriculum" id="cur">
+  <div class="sec-label">The Curriculum</div>
+  <div class="sec-title">5 Chapters to<br>Your First Million</div>
+  <div class="sec-sub">Each chapter is 6–8 minutes of focused, narrated content. Complete the course in one afternoon or one chapter per day.</div>
+  <div class="ch-grid" id="chGrid"></div>
+</div>
+
+</div><!-- /landing -->
+
+<!-- ═══ COURSE PLAYER ═══ -->
+<div class="player" id="player">
+  <nav class="player-nav">
+    <button class="back-btn" onclick="showLanding()">← Back to Course</button>
+    <div class="logo-text" style="font-size:1rem">Million<b>AI</b>re <b>Academy</b></div>
+    <div style="font-size:.78rem;color:var(--text3)" id="progressLabel">Chapter 1 of 5</div>
+  </nav>
+  <div class="player-body">
+    <div class="sidebar">
+      <div class="sidebar-hd">Course Chapters</div>
+      <div id="sidebarList"></div>
+    </div>
+    <div class="main" id="mainContent"></div>
+  </div>
+</div>
+
+<script>
+const chapters = [
+  {
+    num:"01",
+    title:"The Millionaire Mindset Reset",
+    desc:"Unlearn everything school taught you about money. Discover the 3 core beliefs every young millionaire has that most people don't.",
+    duration:"~7 min",
+    keypoints:["Money is a skill, not luck","Your 20s are a leverage window","Identity precedes action","Scarcity vs. abundance wiring"],
+    content:`
+<p class="big">"Your first million starts in your mind — and right now, most minds are running the wrong software."</p>
+
+<p>Welcome to the MillionAIre Academy. I'm so glad you're here — because what you're about to learn in the next few minutes could completely change the trajectory of your financial life. Not in a motivational-poster kind of way. In a practical, strategic, deeply actionable way.</p>
+
+<p>Let's start where it all begins — and where most people get stuck before they ever take a single step. <span class="hl">The mindset.</span></p>
+
+<h3>You Were Programmed to Be Average</h3>
+
+<p>Think about everything you were taught about money growing up. Study hard. Get good grades. Find a stable job. Save a little. Retire at sixty-five. That was the script. And for a generation before ours, it worked — barely. But the world has changed. Completely. And the old script doesn't just not work anymore. It actively holds you back.</p>
+
+<p>Here's the uncomfortable truth: <span class="hl">the traditional path to financial security was designed by people who never became millionaires.</span> Teachers, counselors, well-meaning parents — they taught you what they knew. But what they knew was built for a world with factories, pensions, and 40-year corporate careers. That world is gone.</p>
+
+<p>The people becoming wealthy in their 20s today are not following that path. They are playing an entirely different game. And the first move in that game is a mental one.</p>
+
+<h3>Belief One: Money Is a Skill, Not Luck</h3>
+
+<p>Most people secretly believe that wealthy people got lucky. Maybe they were born rich, or they met the right person, or they stumbled onto a good idea at the right time. And sure — luck plays a role in everyone's story. But luck is not a strategy, and it is not a requirement.</p>
+
+<p>The millionaires who built wealth from nothing — and there are millions of them — treated money as a learnable skill. Just like coding. Just like cooking. Just like playing an instrument. You practice, you study, you make mistakes, you improve. <span class="hl">Making money is a craft.</span> And AI digital products have made that craft more accessible than at any point in human history.</p>
+
+<h3>Belief Two: Your 20s Are a Leverage Window</h3>
+
+<p>You have something that money literally cannot buy. Time. And right now, in your 20s, you have time, energy, and — critically — very little to lose. You probably don't have a mortgage. You don't have three kids. You don't have 20 years of corporate seniority you're afraid to walk away from.</p>
+
+<p>This is a leverage window. A period in your life where risk is cheap and upside is massive. A 25-year-old who builds a $10,000-a-month AI product business and fails still has 40 more years to try again. A 55-year-old with the same failure is in a very different situation.</p>
+
+<p><span class="hl">Your 20s are not a rehearsal. They are the most strategically valuable decade of your financial life.</span> Start now, even imperfectly.</p>
+
+<h3>Belief Three: Identity Comes Before Action</h3>
+
+<p>Here is a concept most people skip because it sounds too abstract — but it is the most important thing I'll tell you in this chapter. You do not rise to your goals. You fall to your identity. If you still think of yourself as "someone who tries to make money online," you will always be trying. But if you genuinely start identifying as an entrepreneur — as a creator, a builder, a product developer — your decisions start to change automatically.</p>
+
+<p>This is not about faking it or lying to yourself. It's about making a real, deliberate decision about who you are becoming. The moment you say "I am building an AI business" instead of "I am thinking about building an AI business," something shifts. You start filtering opportunities differently. You start protecting your time. You start investing in your education. Identity is the engine. Everything else is the vehicle.</p>
+
+<h3>The Abundance Rewire</h3>
+
+<p>Finally — and I want you to really sit with this — <span class="hl">there is not a limited supply of wealth waiting to be claimed.</span> The internet has made it possible to create value for millions of people simultaneously, with products that cost almost nothing to duplicate. An ebook you write once can sell a thousand times. An AI tool you build can serve ten thousand customers without you ever showing up to work.</p>
+
+<p>This is abundance thinking applied to a system — digital products — that was literally built for abundance. And AI has multiplied that potential by ten. You are entering this game at the perfect moment. Not too early, not too late. Right now.</p>
+
+<p>In the next chapter, we are going to get specific. We are going to talk about exactly what AI digital products are, why they are the best opportunity for someone in their 20s, and which ones have the highest chance of making you your first million. Let's go.</p>
+    `
+  },
+  {
+    num:"02",
+    title:"AI Digital Products: The New Gold Rush",
+    desc:"What AI digital products actually are, which ones print money, and why 2025 is the best year in history to start — even with no tech background.",
+    duration:"~7 min",
+    keypoints:["The 6 best AI product categories","Zero marginal cost model","Why now beats 2020 by 100x","Picking your niche before you build"],
+    content:`
+<p class="big">"The gold rush of the 1800s made a few miners rich. The pick-and-shovel sellers got reliably wealthy. AI digital products are today's pick and shovel."</p>
+
+<p>Welcome back. In Chapter One we reset your mindset. Now it's time to get tactical. In this chapter, I'm going to tell you exactly what AI digital products are, why they are the most powerful wealth-building vehicle available to someone in their 20s, and which specific categories have the most momentum right now.</p>
+
+<h3>What Exactly Is an AI Digital Product?</h3>
+
+<p>Let's define our terms clearly. A digital product is anything you create once and can sell an unlimited number of times — ebooks, courses, templates, software, memberships. The product exists in digital form, which means it costs almost nothing to reproduce. No warehouse. No shipping. No inventory.</p>
+
+<p>An <span class="hl">AI digital product</span> takes this concept further. It is a digital product that is either created using AI tools, powered by AI in its delivery, or teaches others how to use AI. Examples include: an AI-generated course on personal finance. A custom GPT chatbot sold to small businesses. A Notion template bundle built with AI. A prompt library for marketers. An AI writing tool for lawyers. A faceless YouTube channel fully produced with AI narration and visuals. The range is enormous — and that's the point.</p>
+
+<h3>The Six Hottest AI Product Categories Right Now</h3>
+
+<p><span class="hl">First: AI-powered courses and ebooks.</span> If you know something — anything — you can turn it into a course. AI tools like Claude, ChatGPT, and Gemini can help you outline, write, and structure content ten times faster than before. A well-positioned course on any in-demand topic — fitness, investing, copywriting, parenting, photography — can sell for anywhere from $27 to $2,000.</p>
+
+<p><span class="hl">Second: Custom GPTs and chatbots.</span> OpenAI's GPT store and similar platforms let you publish AI tools for specific audiences. A legal Q&A bot. A fitness coach chatbot. A social media caption generator for real estate agents. These are low-cost to build and can be sold as subscriptions.</p>
+
+<p><span class="hl">Third: AI-generated content channels.</span> Faceless YouTube channels, newsletter businesses, and blog networks built with AI can generate thousands per month from ad revenue, sponsorships, and affiliate marketing. One creator in the AI finance niche generates over $40,000 per month from a channel with no on-camera presence.</p>
+
+<p><span class="hl">Fourth: Prompt packs and AI toolkits.</span> Selling curated collections of prompts for specific industries — real estate prompts, HR prompts, teacher prompts — is a low-ticket, high-volume opportunity. Bundles on Etsy and Gumroad routinely sell thousands of copies.</p>
+
+<p><span class="hl">Fifth: AI automation services packaged as products.</span> Building workflows in tools like Make or Zapier that automate business processes, then selling them as templates or done-for-you solutions to businesses. This bridges the gap between service and product.</p>
+
+<p><span class="hl">Sixth: AI-assisted design and media assets.</span> Stock images, logo templates, social media kits, presentation themes, and video assets created with AI tools and sold on marketplaces. Passive, scalable, and beginner-friendly.</p>
+
+<h3>Why the Economics Are So Extraordinary</h3>
+
+<p>Here's what makes AI digital products different from almost every other business model. <span class="hl">Your marginal cost is effectively zero.</span> Once the product is built, selling a thousand copies costs you nothing more than selling one. Compare that to a coffee shop, where every cup requires ingredients, labor, and overhead. Or a service business, where your income is directly tied to your hours.</p>
+
+<p>Digital products decouple your income from your time. That is one of the most powerful financial principles you will ever learn. And AI has dramatically cut the cost and time required to create high-quality digital products in the first place. What used to take a team months can now be done by one person in weeks.</p>
+
+<h3>Why Right Now Is the Best Moment in History</h3>
+
+<p>The AI tools available in 2025 are remarkably capable and affordable. The platforms to sell on — Gumroad, Etsy, Teachable, Kajabi, your own Shopify store — are mature and easy to use. The audiences hungry for AI-related content and tools are enormous and growing. And most importantly, <span class="hl">the market is not yet saturated.</span> We are still in the early majority phase of AI product adoption. The people who move now will build brand, reputation, and revenue before the space gets crowded.</p>
+
+<p>In the next chapter, I am going to walk you through exactly how to build your first AI digital product — even if you have no tech skills, no audience, and no idea where to start. The process is simpler than you think. Let's keep going.</p>
+    `
+  },
+  {
+    num:"03",
+    title:"Build Your First AI Product in 7 Days",
+    desc:"A day-by-day blueprint to take your first AI digital product from zero to listed and ready to sell — with no coding required.",
+    duration:"~7 min",
+    keypoints:["The 7-day launch framework","Validating before building","Using AI as your co-founder","Pricing psychology for digital products"],
+    content:`
+<p class="big">"Done is infinitely more valuable than perfect. Your first product will not be your best. It will be your most important."</p>
+
+<p>Welcome to Chapter Three — and this is where things get real. We are done with philosophy. It's time to build something. In this chapter, I am going to give you a day-by-day framework to go from absolutely nothing to a published, listed, ready-to-sell AI digital product within seven days.</p>
+
+<p>Yes, seven days. I'm not saying it will be perfect. I'm saying it will be done. And done beats perfect every single time when you are just starting.</p>
+
+<h3>Day One: Find Your Profitable Niche</h3>
+
+<p>The biggest mistake new creators make is building a product nobody wants. So on day one, we don't build anything. We research. Your goal is to find the intersection of three things: <span class="hl">something you know or can learn quickly, something people are searching for, and something people are already paying for.</span></p>
+
+<p>Go to Etsy and search for "AI prompts," "AI templates," "notion templates," or anything AI-related. Sort by "most relevant" and look at which products have hundreds or thousands of reviews. Go to Gumroad and do the same. These are your market signals. Real people, paying real money, for products like what you're going to build. Take notes on the titles, the pricing, the descriptions.</p>
+
+<p>Also ask Claude or ChatGPT: "What are the top 20 problems that [your target audience] struggles with daily?" Pick one problem you feel confident solving.</p>
+
+<h3>Day Two: Validate Before You Build</h3>
+
+<p>Post about your product idea before it exists. Seriously. Put up a post on Twitter, Reddit, LinkedIn, or Instagram — wherever your target audience hangs out — describing the product you are planning to build and asking: "Would this be useful to you? What would you pay for it?"</p>
+
+<p>You can even create a simple landing page in 30 minutes using tools like Carrd or Notion, list the product for pre-sale, and see if anyone clicks the buy button. <span class="hl">If you can get even five people to say "I'd pay for that," you have all the validation you need to proceed.</span></p>
+
+<h3>Day Three: Build With AI as Your Co-Founder</h3>
+
+<p>Now we build. And here's the secret: you are not doing this alone. Your AI co-founders are Claude, ChatGPT, Midjourney, Canva AI, and whichever other tools fit your product type.</p>
+
+<p>For a prompt pack: ask Claude to generate 50 high-quality prompts for your target use case, then curate and refine them. For an ebook: use Claude to generate a full chapter outline, then write each chapter using AI with your own edits and voice layered on top. For a course: record yourself teaching what you know, use AI to transcribe, structure, and enhance the content. For a template: use Notion, Google Sheets, or Airtable to build the structure, and use AI to help you write all the documentation, instructions, and example data.</p>
+
+<p>Your job is not to create from scratch. <span class="hl">Your job is to curate, customize, and package AI output into something genuinely useful for your audience.</span> That's the skill. That's the value.</p>
+
+<h3>Days Four and Five: Design and Package</h3>
+
+<p>Presentation matters enormously in the digital product world. People judge quality by perceived quality — and a beautifully designed PDF or a professional-looking Notion template sells far better than the same content in a plain document.</p>
+
+<p>Use Canva to design a gorgeous cover, an ebook layout, or a product mockup. Use Notion for templates. Use Google Slides for course workbooks. Everything should look cohesive — use two or three colors, one headline font, one body font. Keep it clean.</p>
+
+<p><span class="hl">Also write your sales copy on these days.</span> Your product title, a one-sentence hook, three to five bullet points of what's included, and a clear description of who this is for. AI can help you write all of this. Ask Claude: "Write me compelling sales copy for a [product name] aimed at [audience] that helps them [outcome]."</p>
+
+<h3>Days Six and Seven: List, Price, and Launch</h3>
+
+<p>On day six, upload your product to Gumroad, Etsy, or Payhip. These platforms handle payment processing, file delivery, and even some marketing for you. Set your price. For prompt packs, $7 to $27 is standard. For templates, $17 to $97. For courses, $97 to $497. For premium toolkits, $47 to $197.</p>
+
+<p>On day seven, launch publicly. Post everywhere. Email your list if you have one. Message people in your network who might be interested. Ask for honest feedback from the first few buyers. <span class="hl">Your first sale will feel like magic.</span> Every sale after that will feel like momentum.</p>
+
+<p>In Chapter Four, we are going to talk about how to actually drive consistent traffic and sales — how to go from your first sale to your first $10,000 month. Let's keep moving.</p>
+    `
+  },
+  {
+    num:"04",
+    title:"Marketing & Selling — From $0 to $10K/Month",
+    desc:"The exact marketing engine to drive consistent traffic, build an audience that trusts you, and create a product business that runs while you sleep.",
+    duration:"~8 min",
+    keypoints:["The content flywheel strategy","Email list as your golden asset","SEO for digital products","Affiliate and partnership leverage"],
+    content:`
+<p class="big">"The best product without marketing makes no money. The mediocre product with great marketing makes millions. Master the message."</p>
+
+<p>Welcome to Chapter Four. You have a product. You've listed it. Maybe you've made a few sales. Now comes the part that separates the people who earn a few hundred dollars from the people who build real, consistent, life-changing income. <span class="hl">Marketing.</span></p>
+
+<p>I want to be direct with you here: most people underprice their product, overprice their time, and then wonder why marketing feels hard. Great marketing starts with a product that genuinely solves a real problem at a fair price. If you've done Chapter Three well, you have that. Now we build the engine to sell it.</p>
+
+<h3>The Content Flywheel</h3>
+
+<p>The most reliable, sustainable, and scalable way to drive traffic to digital products in 2025 is through content. Not paid ads — those require budget and expertise you may not have yet. <span class="hl">Organic content.</span> Posts, videos, newsletters, and short-form content that provide real value and build an audience who trusts your recommendations.</p>
+
+<p>Here's how the flywheel works: you create content on the topic your product is about. You share that content consistently on one or two platforms where your audience lives. People find your content, get value from it, and follow you. You mention your product naturally. Some of those followers buy. You use that revenue to create better content. The flywheel spins faster over time.</p>
+
+<p>The key insight is that your content is not a commercial — it's genuinely useful. <span class="hl">Teach generously. Show results. Share your own journey.</span> The sale is a natural extension of the relationship, not the goal of every post.</p>
+
+<h3>Pick One Platform and Go Deep</h3>
+
+<p>You do not need to be on every platform. In fact, trying to be everywhere simultaneously is how people burn out and quit before they ever see results. Pick one primary platform based on where your audience is and what content format suits you.</p>
+
+<p>If your audience is professionals, try LinkedIn or Twitter. If they are younger and visual, try TikTok or Instagram. If they love long-form information, YouTube or a newsletter. If they are hobbyists or creatives, Pinterest or Etsy itself as a discovery engine.</p>
+
+<p>With AI tools, you can create a week's worth of content in two or three hours. Use Claude to write your post drafts. Use Canva to design your visuals. Use a tool like Buffer or Later to schedule everything. <span class="hl">Consistency over brilliance. Show up every day, even if it's small.</span></p>
+
+<h3>Your Email List: The Golden Asset</h3>
+
+<p>Social media platforms can change their algorithm overnight and cut your reach to zero. Email cannot do that. Your email list is the one marketing asset you truly own — and it is the highest-converting marketing channel for digital products, consistently outperforming social media by five to ten times.</p>
+
+<p>Start building your email list from day one. Offer a free lead magnet — a small, useful resource directly related to your paid product. A free mini-course. A five-page guide. A free template. Give this away in exchange for an email address using a tool like ConvertKit, Beehiiv, or MailerLite.</p>
+
+<p>Then email your list once or twice per week. Share value — insights, tips, behind-the-scenes updates. And periodically, mention your products. <span class="hl">A list of 1,000 engaged subscribers can generate $1,000 to $5,000 per launch.</span> A list of 10,000 can produce life-changing revenue.</p>
+
+<h3>SEO: Traffic That Compounds Over Time</h3>
+
+<p>Search Engine Optimization is not dead — it is more powerful than ever for digital product sellers. When someone searches for "best AI prompts for real estate agents" or "Notion template for freelancers" and your product appears at the top of Google, that is free, highly qualified traffic coming to you forever.</p>
+
+<p>Use tools like Ubersuggest or Google Keyword Planner to find the exact phrases your audience is searching for. Write blog posts, YouTube video scripts, or product descriptions optimized around those phrases. Use AI to help you create more content, faster. <span class="hl">SEO is slow — it takes three to six months to see results — but once it works, it works for years with minimal ongoing effort.</span></p>
+
+<h3>Partnerships and Affiliates</h3>
+
+<p>One of the fastest ways to scale your sales is to get other people selling your product for you. Set up an affiliate program — most platforms like Gumroad allow this easily — and offer 30 to 50 percent commission to affiliates who promote your product.</p>
+
+<p>Reach out to creators in adjacent niches who have audiences that would benefit from your product. Offer them a free copy in exchange for an honest review or a promotional mention. One well-placed mention from a creator with 50,000 followers can generate more sales than months of solo marketing.</p>
+
+<p>Getting to $10,000 per month requires roughly $300 to $400 in daily sales. That is completely achievable with the right product at the right price, a growing content presence, an email list, and one or two affiliate partnerships. In our final chapter, we are going to talk about what happens after — how to scale past $100,000 per month and build toward that million-dollar milestone. Let's finish strong.</p>
+    `
+  },
+  {
+    num:"05",
+    title:"Scaling to $1M — Automation & Systems",
+    desc:"How to build the systems, automation, and product ecosystem that takes you from $10K months to your first million — without burning out.",
+    duration:"~8 min",
+    keypoints:["The product ecosystem model","Hiring your first AI workforce","Automation stacks that run 24/7","The $1M milestone roadmap"],
+    content:`
+<p class="big">"A million dollars is not a single transaction. It is a system — running, compounding, and growing — while you live your life."</p>
+
+<p>Welcome to the final chapter of the MillionAIre Academy. We have covered mindset. We have covered the landscape of AI products. We have built your first product and built your marketing engine. Now we are going to talk about the thing that separates the $10,000-a-month business from the million-dollar one. <span class="hl">Systems and scale.</span></p>
+
+<p>I want to paint you a picture. Imagine waking up and checking your dashboard — and seeing that while you slept, your automated email sequence sold $3,000 worth of your course. Your affiliate partners drove $1,500 in sales. Your SEO blog post generated 200 new email subscribers who are now inside your funnel. That is not fantasy. That is what a properly built digital product system looks like when it's running at full power.</p>
+
+<h3>From One Product to a Product Ecosystem</h3>
+
+<p>Your first product is the entry point. But one product at one price point has a ceiling. <span class="hl">The path to one million dollars requires a product ecosystem</span> — a portfolio of offers at multiple price points that serve your audience at different levels of depth and commitment.</p>
+
+<p>Think of it like a ladder. At the bottom: a free lead magnet that builds your email list. Just above that: a low-ticket product at $17 to $47 — your entry-level offer that turns subscribers into buyers. In the middle: your core product at $97 to $497, your bestseller. Higher up: a premium bundle or course at $497 to $1,997. And at the top: a mastermind, coaching program, or done-for-you service at $2,000 to $10,000 or more.</p>
+
+<p>When you have this ladder, every person who finds you has a path to spend more. Your customer lifetime value multiplies. Your revenue becomes far more predictable. And because AI helps you create content fast, building this ecosystem of products over 12 to 18 months is entirely achievable for a solo creator.</p>
+
+<h3>Your AI Workforce</h3>
+
+<p>Here is something remarkable about building a digital product business in 2025: you do not need a team in the traditional sense. You need the right AI tools configured well, and they become your 24/7 workforce.</p>
+
+<p><span class="hl">Claude or ChatGPT</span> for content creation, copywriting, customer email responses, and product development. <span class="hl">Zapier or Make</span> for automating workflows — when a customer buys, they automatically get a welcome email, are added to your list, and get their download link, all without you touching anything. <span class="hl">ConvertKit or ActiveCampaign</span> for automated email sequences that nurture leads and sell your products over days and weeks. <span class="hl">TidyCal or Calendly</span> for premium coaching bookings if you add live components to your ecosystem.</p>
+
+<p>The goal is to engineer your business so that your personal labor is focused only on what requires your unique creativity and judgment — the product ideas, the content strategy, the key relationships. Everything operational should be automated.</p>
+
+<h3>The Automation Stack That Runs 24/7</h3>
+
+<p>Let me walk you through a basic automation stack you can set up in a weekend. Someone discovers your content on Instagram. They click your link in bio and download your free lead magnet. They are automatically added to your email list with a tag. Over the next seven days, they receive an automated welcome sequence — five emails that provide genuine value and introduce your paid product. On email four, there is a promotional message with a limited-time offer. Some percentage buys. That sale triggers another automation — they are moved to your buyer list, the discount expires, and an upsell sequence begins. All of this happens automatically, around the clock, on every day of the year, whether you are working, traveling, or sleeping.</p>
+
+<p><span class="hl">Once you set up this system, your job becomes feeding the top of the funnel with new content and traffic.</span> The system does the selling. You do the creating.</p>
+
+<h3>The $1M Milestone Roadmap</h3>
+
+<p>Let me make this concrete. One million dollars in revenue over 12 months is $83,333 per month. That sounds like a lot — until you break it down. If your average product price is $200 and you sell 420 products per month, you hit a million per year. That's 14 sales per day. With a list of 10,000 people, a consistent content engine, and a solid product ecosystem, 14 sales per day is absolutely achievable.</p>
+
+<p>Months one through three: build your first product, launch it, get your first 100 email subscribers, make your first 10 to 20 sales. Months four through six: refine the product based on customer feedback, add a second product, grow your list to 500 to 1,000, and optimize your automation stack. Months seven through twelve: add premium offers, build affiliate relationships, scale your content, and aim for consistent $10,000+ months. Months 12 to 24: expand the ecosystem, consider hiring a part-time virtual assistant for non-creative tasks, and compound toward the million-dollar mark.</p>
+
+<p>This is not a get-rich-quick scheme. It is a get-rich-smart plan. It requires real effort, real learning, and real persistence. But unlike the traditional path — 40 years of working for someone else — this path puts you in control. <span class="hl">Of your time. Of your income. Of your future.</span></p>
+
+<h3>Your Next Step Starts Now</h3>
+
+<p>You have just completed the MillionAIre Academy course. You now know things that most people in their 20s — and honestly, most people of any age — don't know. You understand why your mindset is the foundation. You know which AI products have the most momentum. You have a 7-day blueprint to build your first product. You know how to market it and grow it. And you have a roadmap to scale to your first million.</p>
+
+<p>The only thing standing between you and that future is one decision: to start. Not to plan more. Not to research more. Not to wait until you feel ready. <span class="hl">To start.</span></p>
+
+<p>Go build something. The world is waiting for what only you can create. I'll see you on the other side of your first sale.</p>
+    `
+  }
+];
+
+let currentChapter = 0;
+let synth = window.speechSynthesis;
+let utterance = null;
+let voices = [];
+let isPlaying = false;
+let charIndex = 0;
+let totalChars = 1;
+let completedChapters = new Set();
+let selectedVoice = null;
+let speechRate = 0.92;
+
+function stripHTML(html){
+  const d=document.createElement('div');d.innerHTML=html;return d.textContent||d.innerText||'';
+}
+
+function getVoices(){
+  voices=synth.getVoices();
+  const sel=document.getElementById('voiceSel');
+  if(!sel)return;
+  sel.innerHTML='';
+  const femaleKeywords=['female','woman','zira','samantha','victoria','karen','tessa','moira','fiona','susan','hazel','aria','jenny','emma','natasha','ava','cortana','google us english'];
+  const femaleVoices=voices.filter(v=>{
+    const n=v.name.toLowerCase();
+    return femaleKeywords.some(k=>n.includes(k));
+  });
+  const pool=femaleVoices.length>0?femaleVoices:voices;
+  pool.forEach((v,i)=>{
+    const o=document.createElement('option');
+    o.value=voices.indexOf(v);
+    o.text=v.name+(v.lang?' ('+v.lang+')':'');
+    sel.appendChild(o);
+  });
+  if(pool.length>0)selectedVoice=pool[0];
+}
+
+if(synth.onvoiceschanged!==undefined){synth.onvoiceschanged=getVoices;}
+setTimeout(getVoices,300);
+
+function buildLanding(){
+  const grid=document.getElementById('chGrid');
+  if(!grid)return;
+  grid.innerHTML=chapters.map((c,i)=>`
+    <div class="ch-card" onclick="showPlayer(${i})">
+      <div class="ch-num">Chapter ${c.num}</div>
+      <div class="ch-name">${c.title}</div>
+      <div class="ch-desc">${c.desc}</div>
+      <div class="ch-meta">⏱ ${c.duration}</div>
+      <div class="ch-play-btn">▶ Play Chapter</div>
+    </div>
+  `).join('');
+}
+
+function buildSidebar(){
+  const list=document.getElementById('sidebarList');
+  list.innerHTML=chapters.map((c,i)=>`
+    <div class="sb-ch ${i===currentChapter?'on':''}" id="sbch${i}" onclick="switchChapter(${i})">
+      <div class="sb-num">Chapter ${c.num}</div>
+      <div class="sb-title">${c.title}</div>
+      <div class="sb-dur">${c.duration}</div>
+      ${completedChapters.has(i)?'<div class="sb-done">✓ Completed</div>':''}
+    </div>
+  `).join('');
+}
+
+function buildMainContent(){
+  const c=chapters[currentChapter];
+  const isLast=currentChapter===chapters.length-1;
+  const nextC=!isLast?chapters[currentChapter+1]:null;
+  document.getElementById('progressLabel').textContent=`Chapter ${currentChapter+1} of ${chapters.length}`;
+  document.getElementById('mainContent').innerHTML=`
+    <div class="content-label">Chapter ${c.num} · ${c.duration}</div>
+    <div class="content-title">${c.title}</div>
+    <div class="audio-box">
+      <div class="audio-top">
+        <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+        <button class="stop-btn" id="stopBtn" onclick="stopAudio()" title="Stop">◼</button>
+        <div class="audio-info">
+          <div class="audio-status" id="audioStatus">Press play to hear AI narration</div>
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          <div class="audio-pct" id="audioPct">0% complete</div>
+        </div>
+      </div>
+      <div class="audio-settings">
+        <div class="setting">
+          <label>🎙 Voice:</label>
+          <select id="voiceSel" onchange="changeVoice(this.value)">
+            <option>Loading voices...</option>
+          </select>
+        </div>
+        <div class="setting">
+          <label>⚡ Speed:</label>
+          <select id="speedSel" onchange="changeSpeed(this.value)">
+            <option value="0.75">0.75×</option>
+            <option value="0.92" selected>Normal</option>
+            <option value="1.1">1.1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+          </select>
+        </div>
+        <div class="voice-note" id="vNote"></div>
+      </div>
+    </div>
+    <div class="keybox">
+      <div class="keybox-title">Chapter Key Points</div>
+      ${c.keypoints.map(k=>`<div class="kp"><div class="dot"></div><div>${k}</div></div>`).join('')}
+    </div>
+    <div class="chapter-text">${c.content}</div>
+    ${!isLast?`
+    <button class="next-btn" onclick="switchChapter(${currentChapter+1})">
+      <div>
+        <div class="next-lbl">Next Chapter</div>
+        <div class="next-name">${nextC.title}</div>
+      </div>
+      <div class="next-arrow">→</div>
+    </button>`:
+    `<div class="complete-box">
+      <h3>🎉 Course Complete!</h3>
+      <p>You've finished all 5 chapters of the MillionAIre Academy.<br>Now take one action today — validate your niche, pick your product, start your list.</p>
+      <button class="btn-p" onclick="showLanding()" style="margin-top:.5rem">← Back to Course Home</button>
+    </div>`}
+  `;
+  setTimeout(()=>{getVoices();updateVoiceNote();},400);
+}
+
+function updateVoiceNote(){
+  const note=document.getElementById('vNote');
+  if(!note)return;
+  if(voices.length===0){note.textContent='No voices found — check browser TTS settings';}
+  else{
+    const sel=document.getElementById('voiceSel');
+    if(sel&&sel.options.length>0&&sel.selectedIndex>=0){
+      const v=voices[parseInt(sel.value)];
+      if(v)note.textContent='Voice: '+v.name;
+    }
+  }
+}
+
+function changeVoice(idx){
+  const v=voices[parseInt(idx)];
+  if(v){selectedVoice=v;updateVoiceNote();}
+}
+
+function changeSpeed(val){
+  speechRate=parseFloat(val);
+  if(isPlaying){const wasPl=true;stopAudio();if(wasPl)togglePlay();}
+}
+
+function togglePlay(){
+  if(isPlaying){pauseAudio();}
+  else{playAudio();}
+}
+
+function playAudio(){
+  if(synth.paused&&utterance){synth.resume();isPlaying=true;updatePlayBtn();setStatus('Playing...');return;}
+  const c=chapters[currentChapter];
+  const text=stripHTML(c.content);
+  totalChars=text.length;
+  utterance=new SpeechSynthesisUtterance(text);
+  utterance.rate=speechRate;
+  utterance.pitch=1.05;
+  utterance.volume=1;
+  if(selectedVoice)utterance.voice=selectedVoice;
+  else{getVoices();if(selectedVoice)utterance.voice=selectedVoice;}
+  utterance.onstart=()=>{isPlaying=true;updatePlayBtn();setStatus('Playing narration...');};
+  utterance.onboundary=(e)=>{
+    if(e.name==='word'){
+      charIndex=e.charIndex;
+      const pct=Math.min(100,Math.round((charIndex/totalChars)*100));
+      const fill=document.getElementById('progressFill');
+      const pctEl=document.getElementById('audioPct');
+      if(fill)fill.style.width=pct+'%';
+      if(pctEl)pctEl.textContent=pct+'% complete';
+    }
+  };
+  utterance.onend=()=>{
+    isPlaying=false;updatePlayBtn();setStatus('Narration complete ✓');
+    const fill=document.getElementById('progressFill');
+    const pctEl=document.getElementById('audioPct');
+    if(fill)fill.style.width='100%';
+    if(pctEl)pctEl.textContent='100% complete';
+    completedChapters.add(currentChapter);
+    buildSidebar();
+  };
+  utterance.onerror=(e)=>{
+    isPlaying=false;updatePlayBtn();
+    if(e.error!=='interrupted')setStatus('Voice not available — try another voice');
+  };
+  synth.cancel();
+  synth.speak(utterance);
+}
+
+function pauseAudio(){
+  synth.pause();isPlaying=false;updatePlayBtn();setStatus('Paused');
+}
+
+function stopAudio(){
+  synth.cancel();utterance=null;isPlaying=false;charIndex=0;
+  updatePlayBtn();setStatus('Stopped');
+  const fill=document.getElementById('progressFill');
+  const pctEl=document.getElementById('audioPct');
+  if(fill)fill.style.width='0%';
+  if(pctEl)pctEl.textContent='0% complete';
+}
+
+function updatePlayBtn(){
+  const btn=document.getElementById('playBtn');
+  if(btn)btn.textContent=isPlaying?'⏸':'▶';
+}
+
+function setStatus(msg){
+  const el=document.getElementById('audioStatus');
+  if(el)el.textContent=msg;
+}
+
+function switchChapter(idx){
+  stopAudio();
+  currentChapter=idx;
+  buildSidebar();
+  buildMainContent();
+  document.getElementById('mainContent').scrollTop=0;
+}
+
+function showPlayer(idx){
+  currentChapter=idx;
+  document.getElementById('landing').style.display='none';
+  const p=document.getElementById('player');
+  p.classList.add('on');
+  buildSidebar();
+  buildMainContent();
+}
+
+function showLanding(){
+  stopAudio();
+  document.getElementById('landing').style.display='block';
+  document.getElementById('player').classList.remove('on');
+  window.scrollTo(0,0);
+}
+
+buildLanding();
+</script>
+</body>
+</html>
